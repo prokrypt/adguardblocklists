@@ -31,6 +31,6 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          curl https://zonefiles.io/f/compromised/ip/live/ | while read in; do echo "|$in|"; done
+          curl https://zonefiles.io/f/compromised/ip/live/ | while read in; do echo "|$in|"; done > compromised_ips.txt
 #          echo Add other actions to build,
 #          echo test, and deploy your project.
