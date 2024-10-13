@@ -34,3 +34,10 @@ jobs:
           curl https://zonefiles.io/f/compromised/ip/live/ | while read in; do echo "|$in|"; done > compromised_ips.txt
 #          echo Add other actions to build,
 #          echo test, and deploy your project.
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./compromised_ips.txt
+          asset_name: compromised_ips.txt
+          asset_content_type: application/octet-stream
